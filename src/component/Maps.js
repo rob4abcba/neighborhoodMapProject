@@ -17,7 +17,7 @@ export default class Maps extends Component {
     render() {
         return (<MyMapComponent
             isMarkerShown
-            googleMapURL="https://maps.googleapis.com/maps/api/js?v=3.exp&keyAIzaSyDh7394q-5ad52PpB8WtSWiwtYA-iDTrWs"
+            googleMapURL="https://maps.googleapis.com/maps/api/js?v=3.exp&key=AIzaSyDTrDO1RTyqmjVf792Xvo4svMZ11vp2WdQ"
             loadingElement={<div style={{ height: `100%` }} />}
             containerElement={<div style={{ height: `400px` }} />}
             mapElement={<div style={{ height: `100%` }} />}
