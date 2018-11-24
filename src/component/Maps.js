@@ -2,22 +2,27 @@ import React, {Component} from "react";
 
 import { withScriptjs, withGoogleMap, GoogleMap, Marker } from "react-google-maps"
 
-const MyMapComponent = withScriptjs(withGoogleMap((props) =>
+const MyMapComponent = withScriptjs(withGoogleMap(props => (
   <GoogleMap
-    defaultZoom={8}
+    defaultZoom = {8}
+    zoom = {props.zoom}
     defaultCenter={{ lat: -34.397, lng: 150.644 }}
+    center = {props.center}
   >
-    {props.isMarkerShown && <Marker position={{ lat: -34.397, lng: 150.644 }} />}
+  {props.markers && props.markers.filter(marker => marker.isVisible).map((marker, idx) => (
+    <Marker key = {idx} position={{ lat: marker.lat, lng: marker.lng }} />
+  ))}
   </GoogleMap>
 ))
+);
 
 
 
 export default class Maps extends Component {
     render() {
         return (<MyMapComponent
-            isMarkerShown
-            googleMapURL="https://maps.googleapis.com/maps/api/js?v=3.exp&key=AIzaSyDTrDO1RTyqmjVf792Xvo4svMZ11vp2WdQ"
+            {...this.props}
+            googleMapURL="https://maps.googleapis.com/maps/api/js?v=3.exp&key=AIzaSyDh7394q-5ad52PpB8WtSWiwtYA-iDTrWs"
             loadingElement={<div style={{ height: `100%` }} />}
             containerElement={<div style={{ height: `400px` }} />}
             mapElement={<div style={{ height: `100%` }} />}
