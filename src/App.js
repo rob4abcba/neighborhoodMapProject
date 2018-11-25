@@ -17,10 +17,19 @@ class App extends Component {
   }
 
   markCLicker = marker => {
+    this.closeinfoWindows();
     marker.isOpen = true;
     this.setState({markers:Object.assign(this.state.markers, marker)
     });
-  };
+  }
+
+  closeinfoWindows = () => {
+    const markers = this.state.markers.map(marker => {
+      marker.isOpen =false;
+      return marker;
+    })
+    this.setState({markers: Object.assign(this.state.markers, markers)});
+  }
 
   componentDidMount() {
     SquareAPI.search({
