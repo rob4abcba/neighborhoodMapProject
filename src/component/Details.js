@@ -4,7 +4,7 @@ export default class Details extends Component {
     render() {
         return (
             <li className="details">
-                Hola mundo
+                {this.props.name}
             </li>
 
         )

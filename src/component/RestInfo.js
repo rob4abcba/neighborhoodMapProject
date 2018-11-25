@@ -5,7 +5,10 @@ export default class RestInfo extends Component {
     render() {
         return (
             <ol className="restInfo">
-                <Details/>
+                {this.props.venues && 
+                this.props.venues.map((venue, idx) => ( 
+                    <Details key={idx} {...venue}/>
+                ))}
             
             </ol>
 

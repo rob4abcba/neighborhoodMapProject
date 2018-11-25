@@ -20,11 +20,11 @@
   
 }
 
-ol.restInfo {
+.restInfo {
   padding: 1rem;
 }
 
-li.details {
+.details {
   list-style: none;
   font-size: 1rem;
   padding: .5rem;

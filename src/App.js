@@ -63,7 +63,7 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-      <InfoBar/>
+      <InfoBar {...this.state}/>
       <Maps  {...this.state} markCLicker={this.markCLicker} />
       
       </div>
