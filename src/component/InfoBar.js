@@ -5,6 +5,7 @@ export default class InfoBar extends Component {
     render() {
         return (
             <div className="infoBar">
+                <input type={"search"} id={"search"} placeholder={"Filter Venues"} />
                 <RestInfo/>
         
             </div>
