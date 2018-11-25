@@ -31,6 +31,12 @@ class App extends Component {
     });
   }
 
+  detailsHandleClick = venue => {
+    const marker = this.state.markers.find(marker => marker.id === venue.id);
+    this.markCLicker(marker);
+    console.log(venue);
+  }
+
   closeinfoWindows = () => {
     const markers = this.state.markers.map(marker => {
       marker.isOpen =false;
@@ -63,7 +69,7 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-      <InfoBar {...this.state}/>
+      <InfoBar {...this.state} detailsHandleClick={this.detailsHandleClick}/>
       <Maps  {...this.state} markCLicker={this.markCLicker} />
       
       </div>

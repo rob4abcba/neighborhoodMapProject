@@ -6,7 +6,7 @@ export default class InfoBar extends Component {
         return (
             <div className="infoBar">
                 <input type={"search"} id={"search"} placeholder={"Filter Venues"} />
-                <RestInfo {...this.props}/>
+                <RestInfo {...this.props} detailsHandleClick={this.props.detailsHandleClick}/>
         
             </div>
 

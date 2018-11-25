@@ -7,7 +7,8 @@ export default class RestInfo extends Component {
             <ol className="restInfo">
                 {this.props.venues && 
                 this.props.venues.map((venue, idx) => ( 
-                    <Details key={idx} {...venue}/>
+                    <Details key={idx} {...venue} 
+                    detailsHandleClick={this.props.detailsHandleClick}/>
                 ))}
             
             </ol>
