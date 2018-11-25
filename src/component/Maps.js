@@ -9,16 +9,21 @@ const MyMapComponent = withScriptjs(withGoogleMap(props => (
     defaultCenter={{ lat: -34.397, lng: 150.644 }}
     center = {props.center}
   >
-  {props.markers && props.markers.filter(marker => marker.isVisible).map((marker, idx) => (
-    <Marker key = {idx} position={{ lat: marker.lat, lng: marker.lng }} 
+  {props.markers && props.markers.filter(marker => marker.isVisible).map((marker, idx) => {
+      const storeInfo = props.venues.find(venue => venue.id === marker.id);
+    return (<Marker key = {idx} position={{ lat: marker.lat, lng: marker.lng }} 
     onClick={() => props.markCLicker(marker)}>
-      {marker.isOpen && (
+      {marker.isOpen && storeInfo.bestPhoto && (
         <InfoWindow>
-          <p>It's working</p>
+          <React.Fragment>
+            <img src={`${storeInfo.bestPhoto.prefix}200x200${storeInfo.bestPhoto.suffix}`} alt= {"Store"}/>
+            <p>{storeInfo.name}</p>
+          </React.Fragment>
         </InfoWindow>
       )}
     </Marker>  
-  ))}
+  );
+  })}
   </GoogleMap>
 ))
 );
