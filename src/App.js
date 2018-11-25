@@ -16,6 +16,12 @@ class App extends Component {
     };
   }
 
+  markCLicker = marker => {
+    marker.isOpen = true;
+    this.setState({markers:Object.assign(this.state.markers, marker)
+    });
+  };
+
   componentDidMount() {
     SquareAPI.search({
       near: "Austin,TX",
@@ -39,7 +45,7 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-      <Maps  {...this.state} />
+      <Maps  {...this.state} markCLicker={this.markCLicker} />
       
       </div>
     );
