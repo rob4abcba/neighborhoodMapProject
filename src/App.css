@@ -1,5 +1,12 @@
 .App {
   text-align: center;
+  height: 100vh;
+  widows: 100vw;
+  display: flex;
+  flex-flow: row nowrap;
+  .infoBar {
+    width: 25%;
+  }
 }
 
 .App-logo {

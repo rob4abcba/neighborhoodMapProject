@@ -3,6 +3,7 @@ import React, { Component } from 'react';
 import './App.css';
 import Maps from './component/Maps';
 import SquareAPI from "./API/APIindex"
+import InfoBar from './component/InfoBar';
 
 class App extends Component {
   constructor() {
@@ -62,6 +63,7 @@ class App extends Component {
   render() {
     return (
       <div className="App">
+      <InfoBar/>
       <Maps  {...this.state} markCLicker={this.markCLicker} />
       
       </div>
