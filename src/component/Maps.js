@@ -18,6 +18,7 @@ const MyMapComponent = withScriptjs(withGoogleMap(props => (
           <React.Fragment>
             <img src={`${storeInfo.bestPhoto.prefix}200x200${storeInfo.bestPhoto.suffix}`} alt= {"Store"}/>
             <p>{storeInfo.name}</p>
+            <p>{storeInfo.location.formattedAddress[0]}</p>
           </React.Fragment>
         </InfoWindow>
       )}

@@ -60,6 +60,7 @@ class App extends Component {
           isOpen: false,
           isVisible: true,
           id: venue.id
+          
         };
       });
       this.setState({ venues, center, markers});
