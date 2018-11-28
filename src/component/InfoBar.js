@@ -5,8 +5,19 @@ export default class InfoBar extends Component {
     constructor() {
         super();
         this.state = {
-            query: ""
+            query: "",
+            venues: []
         };
+    }
+
+    selectedVenues = () => {
+        if(this.state.query.trim() !== "") {
+            const venues = this.props.venues.filter(venue => venue.name
+                .toLowerCase()
+                .includes(this.state.query.toLowerCase()))
+                return venues;
+        }
+        return this.props.venues;
     }
 
 
@@ -29,7 +40,11 @@ export default class InfoBar extends Component {
         return (
             <div className="infoBar">
                 <input type={"search"} id={"search"} placeholder={"Filter Venues"} onChange={this.makeChanges}/>
-                <RestInfo {...this.props} detailsHandleClick={this.props.detailsHandleClick}/>
+                <RestInfo 
+                    {...this.props}
+                    venues={this.selectedVenues()} 
+                    detailsHandleClick={this.props.detailsHandleClick}
+                />
         
             </div>
 
