@@ -28,7 +28,9 @@ class Helper {
             headers: Helper.headers()
         };
         return fetch(`${Helper.baseURL()}${endpoints}?${Helper.auth()}&${Helper.urlBuilder(urlPrams)}`, requestData)
-        .then(res => res.json());
+        .then(res => res.json()).catch(
+            alert("Error Map API Exceeded Quota")
+        );
 
     }
 }
