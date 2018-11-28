@@ -68,7 +68,9 @@ class App extends Component {
       });
       this.setState({ venues, center, markers});
       console.log(results);
-    });
+    }).catch(
+      alert("Error! The map could not be loaded ")
+    );
   }
   render() {
     return (
