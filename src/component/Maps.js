@@ -1,3 +1,4 @@
+/* global google */
 import React, {Component} from "react";
 
 import { withScriptjs, withGoogleMap, GoogleMap, Marker, InfoWindow} from "react-google-maps"
@@ -9,20 +10,26 @@ const MyMapComponent = withScriptjs(withGoogleMap(props => (
     defaultCenter={{ lat: -34.397, lng: 150.644 }}
     center = {props.center}
   >
-  {props.markers && props.markers.filter(marker => marker.isVisible).map((marker, idx) => {
+  {props.markers && props.markers
+  .filter(marker => marker.isVisible).map((marker, idx, arr) => {
       const storeInfo = props.venues.find(venue => venue.id === marker.id);
-      return (<Marker key = {idx} position={{ lat: marker.lat, lng: marker.lng }} 
-      onClick={() => props.markCLicker(marker)}>
-      {marker.isOpen && storeInfo.bestPhoto && (
-        <InfoWindow>
-          <React.Fragment>
-            <img src={`${storeInfo.bestPhoto.prefix}200x200${storeInfo.bestPhoto.suffix}`} alt= {"Store"}/>
-            <p>{storeInfo.name}</p>
-            <p>{storeInfo.location.formattedAddress[0]}</p>
-          </React.Fragment>
-        </InfoWindow>
-      )}
-    </Marker>  
+      return (
+        <Marker 
+        key = {idx} 
+        position={{ lat: marker.lat, lng: marker.lng }} 
+        onClick={() => props.markCLicker(marker)}
+        animation={arr.length === 1 ? google.maps.Animation.BOUNCE : google.maps.Animation.DROP}
+        >
+        {marker.isOpen && storeInfo.bestPhoto && (
+          <InfoWindow>
+            <React.Fragment>
+              <img src={`${storeInfo.bestPhoto.prefix}200x200${storeInfo.bestPhoto.suffix}`} alt= {"Store"}/>
+              <p>{storeInfo.name}</p>
+              <p>{storeInfo.location.formattedAddress[0]}</p>
+            </React.Fragment>
+          </InfoWindow>
+        )}
+      </Marker>  
   );
   })}
   </GoogleMap>
