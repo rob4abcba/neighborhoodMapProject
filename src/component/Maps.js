@@ -11,8 +11,8 @@ const MyMapComponent = withScriptjs(withGoogleMap(props => (
   >
   {props.markers && props.markers.filter(marker => marker.isVisible).map((marker, idx) => {
       const storeInfo = props.venues.find(venue => venue.id === marker.id);
-    return (<Marker key = {idx} position={{ lat: marker.lat, lng: marker.lng }} 
-    onClick={() => props.markCLicker(marker)}>
+      return (<Marker key = {idx} position={{ lat: marker.lat, lng: marker.lng }} 
+      onClick={() => props.markCLicker(marker)}>
       {marker.isOpen && storeInfo.bestPhoto && (
         <InfoWindow>
           <React.Fragment>
