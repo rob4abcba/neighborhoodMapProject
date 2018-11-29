@@ -28,9 +28,8 @@ class Helper {
             headers: Helper.headers()
         };
         return fetch(`${Helper.baseURL()}${endpoints}?${Helper.auth()}&${Helper.urlBuilder(urlPrams)}`, requestData)
-        .then(res => res.json()).catch(
-            alert("Error Map API Exceeded Quota")
-        );
+        .then(res => res.json()).catch(error => 
+            alert("Error! The map could not be loaded "))
 
     }
 }
