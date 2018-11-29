@@ -38,7 +38,7 @@ export default class InfoBar extends Component {
     };
     render() {
         return (
-            <div className="infoBar">
+            <div role="tablist" className="infoBar">
                 <input type={"search"} id={"search"} placeholder={"Filter Venues"} onChange={this.makeChanges}/>
                 <RestInfo 
                     {...this.props}

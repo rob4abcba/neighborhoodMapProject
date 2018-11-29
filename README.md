@@ -43,7 +43,14 @@ You can learn more in the [Create React App documentation](https://facebook.gith
 
 To learn React, check out the [React documentation](https://reactjs.org/).
 
+# Installation
+1. clone project
+2. Run "npm run start" in your terminal 
 
+# Resources 
+1. Udacity Starter Code
+2. Student Hub
+3. Fend Resources Walk through
 
 
 
