@@ -48,11 +48,10 @@ To learn React, check out the [React documentation](https://reactjs.org/).
 2. Run "npm run start" in your terminal 
 
 # Resources 
-1. Udacity Starter Code
-2. Student Hub
-3. Fend Resources Walk through
-4. FourSquare Api 
-5. Google map Api
+1. Student Hub
+2. Fend Resources Walk through
+3. FourSquare Api 
+4. Google map Api
 
 
 
