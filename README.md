@@ -51,6 +51,9 @@ To learn React, check out the [React documentation](https://reactjs.org/).
 1. Udacity Starter Code
 2. Student Hub
 3. Fend Resources Walk through
+4. FourSquare Api 
+5. Google map Api
+
 
 
 
