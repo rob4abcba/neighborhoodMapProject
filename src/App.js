@@ -69,7 +69,8 @@ class App extends Component {
       this.setState({ venues, center, markers});
       console.log(results);
     }).catch(error => 
-      alert("Error! The map could not be loaded ")
+      alert("Error! The map could not be loaded "),
+      console.log("it's working map")
       
     );
   }

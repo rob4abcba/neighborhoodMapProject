@@ -29,8 +29,8 @@ class Helper {
         };
         return fetch(`${Helper.baseURL()}${endpoints}?${Helper.auth()}&${Helper.urlBuilder(urlPrams)}`, requestData)
         .then(res => res.json()).catch(error => 
-            alert("Error! The map could not be loaded "))
-
+            alert("Error! The map could not be loaded "),
+            console.log("it's working  foursquare"))
     }
 }
 
