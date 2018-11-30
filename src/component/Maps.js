@@ -23,9 +23,9 @@ const MyMapComponent = withScriptjs(withGoogleMap(props => (
         {marker.isOpen && storeInfo.bestPhoto && (
           <InfoWindow>
             <React.Fragment>
-              <img src={`${storeInfo.bestPhoto.prefix}200x200${storeInfo.bestPhoto.suffix}`} alt= {"Store"}/>
-              <p>{storeInfo.name}</p>
-              <p>{storeInfo.location.formattedAddress[0]}</p>
+              <img className="pic" src={`${storeInfo.bestPhoto.prefix}200x200${storeInfo.bestPhoto.suffix}`} alt= {"Store"}/>
+              <p className="storeInfo">{storeInfo.name}</p>
+              <p className="storeInfo">{storeInfo.location.formattedAddress[0]}</p>
             </React.Fragment>
           </InfoWindow>
         )}
