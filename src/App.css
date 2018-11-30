@@ -42,7 +42,7 @@
 
   .details {
     list-style: none;
-    font-size: .3rem;
+    font-size: .7rem;
     padding: .1rem;
     margin-top: 1rem;
     box-shadow: .5px .5px .5px .5px #b7c0d8;
@@ -54,10 +54,18 @@
   }
 
   .pic {
-    width: 30%;
-    height: 30%;
+    display: none;
+  }
+  
+  .mapPic {
+    width: 40%;
+    height: 40%;
   }
 
+  .box {
+    width: 50%;
+    height: 50%;
+  }
   
   
 

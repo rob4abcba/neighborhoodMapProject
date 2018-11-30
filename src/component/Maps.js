@@ -21,9 +21,9 @@ const MyMapComponent = withScriptjs(withGoogleMap(props => (
         animation={arr.length === 1 ? google.maps.Animation.BOUNCE : google.maps.Animation.DROP}
         >
         {marker.isOpen && storeInfo.bestPhoto && (
-          <InfoWindow>
+          <InfoWindow className="box">
             <React.Fragment>
-              <img className="pic" src={`${storeInfo.bestPhoto.prefix}200x200${storeInfo.bestPhoto.suffix}`} alt= {"Store"}/>
+              <img className="mapPic" src={`${storeInfo.bestPhoto.prefix}200x200${storeInfo.bestPhoto.suffix}`} alt= {"Store"}/>
               <p className="storeInfo">{storeInfo.name}</p>
               <p className="storeInfo">{storeInfo.location.formattedAddress[0]}</p>
             </React.Fragment>
