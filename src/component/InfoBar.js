@@ -38,7 +38,7 @@ export default class InfoBar extends Component {
     };
     render() {
         return (
-            <div className="infoBar">
+            <div className="infoBar" aria-label="infoBar">
                 <input type={"search"} id={"search"} placeholder={"Filter Venues"} onChange={this.makeChanges}/>
                 <RestInfo 
                     {...this.props}

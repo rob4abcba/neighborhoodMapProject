@@ -41,6 +41,7 @@ const MyMapComponent = withScriptjs(withGoogleMap(props => (
 export default class Maps extends Component {
     render() {
         return (<MyMapComponent
+            role="application" aria-label="map"
             {...this.props}
             googleMapURL="https://maps.googleapis.com/maps/api/js?v=3.exp&key=AIzaSyDh7394q-5ad52PpB8WtSWiwtYA-iDTrWs"
             loadingElement={<div style={{ height: `100%` }} />}
